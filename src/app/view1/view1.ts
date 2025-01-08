@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, state, query } from 'lit/decorators.js';
-import { defineComponents, IgcBannerComponent, IgcButtonComponent, IgcButtonGroupComponent, IgcCalendarComponent, IgcCardComponent, IgcChipComponent, IgcDatePickerComponent, IgcDialogComponent, IgcIconButtonComponent, IgcIconComponent, IgcInputComponent, IgcRippleComponent, IgcSelectComponent, IgcSliderComponent, IgcSnackbarComponent, IgcStepperComponent, IgcSwitchComponent, IgcTabsComponent, IgcToggleButtonComponent, IgcTreeComponent } from 'igniteui-webcomponents';
+import { defineComponents, IgcBannerComponent, IgcButtonComponent, IgcButtonGroupComponent, IgcCalendarComponent, IgcCardComponent, IgcChipComponent, IgcDatePickerComponent, IgcDialogComponent, IgcIconButtonComponent, IgcIconComponent, IgcInputComponent, IgcRippleComponent, IgcSelectComponent, IgcSliderComponent, IgcSnackbarComponent, IgcStepperComponent, IgcSwitchComponent, IgcTabsComponent, IgcTextareaComponent, IgcToggleButtonComponent, IgcTreeComponent } from 'igniteui-webcomponents';
 
-defineComponents(IgcButtonComponent, IgcRippleComponent, IgcButtonGroupComponent, IgcToggleButtonComponent, IgcChipComponent, IgcIconComponent, IgcSwitchComponent, IgcIconButtonComponent, IgcTreeComponent, IgcBannerComponent, IgcDialogComponent, IgcCardComponent, IgcTabsComponent, IgcStepperComponent, IgcSliderComponent, IgcCalendarComponent, IgcInputComponent, IgcSelectComponent, IgcDatePickerComponent, IgcSnackbarComponent);
+defineComponents(IgcButtonComponent, IgcRippleComponent, IgcButtonGroupComponent, IgcToggleButtonComponent, IgcChipComponent, IgcIconComponent, IgcSwitchComponent, IgcIconButtonComponent, IgcTreeComponent, IgcBannerComponent, IgcDialogComponent, IgcCardComponent, IgcTabsComponent, IgcStepperComponent, IgcSliderComponent, IgcCalendarComponent, IgcInputComponent, IgcSelectComponent, IgcDatePickerComponent, IgcTextareaComponent, IgcSnackbarComponent);
 
 @customElement('app-view1')
 export default class View1 extends LitElement {
@@ -53,10 +53,7 @@ export default class View1 extends LitElement {
       flex-basis: 0;
     }
     .card {
-      width: 320px;
       height: max-content;
-      min-width: 320px;
-      max-width: 320px;
     }
     .tabs {
       min-width: 0;
@@ -66,6 +63,17 @@ export default class View1 extends LitElement {
     }
     .group_3 {
       justify-content: flex-start;
+      align-items: stretch;
+      align-content: flex-start;
+      gap: 16px;
+      position: relative;
+      min-width: 320px;
+      min-height: 50px;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    .group_4 {
+      justify-content: flex-start;
       align-items: center;
       align-content: flex-start;
       gap: 0.5rem;
@@ -73,7 +81,7 @@ export default class View1 extends LitElement {
       min-width: 50px;
       min-height: 50px;
     }
-    .group_4 {
+    .group_5 {
       justify-content: flex-start;
       align-items: stretch;
       align-content: flex-start;
@@ -181,9 +189,7 @@ export default class View1 extends LitElement {
       max-height: 100%;
     }
     .calendar {
-      width: max-content;
       height: max-content;
-      min-width: max-content;
     }
     .tree {
       min-width: max-content;
@@ -400,14 +406,14 @@ export default class View1 extends LitElement {
           <igc-tab-panel class="row-layout tab-item-content"></igc-tab-panel>
         </igc-tabs>
       </div>
-      <div class="column-layout group_2">
+      <div class="column-layout group_3">
         <igc-stepper title-position="bottom" id="stepper" class="stepper">
           <igc-step ?invalid="${true}">
             <div class="column-layout step-content">
               <p class="typography__body-2 text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
               </p>
-              <div class="row-layout group_3">
+              <div class="row-layout group_4">
                 <igc-button type="button" @click="${() => this.stepper?.next()}" class="button_1">
                   Next
                   <igc-ripple></igc-ripple>
@@ -421,7 +427,7 @@ export default class View1 extends LitElement {
               <p class="typography__body-1 text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
               </p>
-              <div class="row-layout group_3">
+              <div class="row-layout group_4">
                 <igc-button type="button" @click="${() => this.stepper?.prev()}" class="button_1">
                   Prev
                   <igc-ripple></igc-ripple>
@@ -439,7 +445,7 @@ export default class View1 extends LitElement {
               <p class="typography__body-1 text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
               </p>
-              <div class="row-layout group_3">
+              <div class="row-layout group_4">
                 <igc-button type="button" @click="${() => this.stepper?.prev()}" class="button_1">
                   Prev
                   <igc-ripple></igc-ripple>
@@ -454,15 +460,15 @@ export default class View1 extends LitElement {
             <p .slot="subtitle">(Optional)</p>
           </igc-step>
         </igc-stepper>
-        <div class="column-layout group_4">
+        <div class="column-layout group_5">
           <igc-slider min="0" max="100" step="10" ?discrete-track="${true}" value="${this.value}" @igcChange="${(e: any) => this.value = e.detail}" class="slider"></igc-slider>
           <igc-slider min="0" max="100" step="10" ?discrete-track="${true}" value="${this.value}" @igcChange="${(e: any) => this.value = e.detail}" class="slider"></igc-slider>
           <igc-slider min="0" max="100" step="10" ?discrete-track="${true}" value="${this.value}" @igcChange="${(e: any) => this.value = e.detail}" class="slider"></igc-slider>
           <igc-slider min="0" max="100" step="10" ?discrete-track="${true}" value="${this.value}" @igcChange="${(e: any) => this.value = e.detail}" class="slider"></igc-slider>
         </div>
+        <igc-calendar ?hide-header="${false}" header-orientation="horizontal" class="calendar"></igc-calendar>
       </div>
       <div class="column-layout group">
-        <igc-calendar ?hide-header="${false}" header-orientation="horizontal" class="calendar"></igc-calendar>
         <igc-input label="Label" ?outlined="${true}" class="user-input"></igc-input>
         <igc-input label="Label" ?outlined="${false}" class="user-input"></igc-input>
         <igc-select ?outlined="${true}" label="First Select" class="user-input">
@@ -477,6 +483,9 @@ export default class View1 extends LitElement {
         </igc-select>
         <igc-date-picker label="Date" ?outlined="${true}" mode="dialog" class="date-picker"></igc-date-picker>
         <igc-date-picker label="Date" ?outlined="${true}" mode="dialog" class="date-picker"></igc-date-picker>
+        <igc-textarea label="Label/ NoPlaceholder" ?outlined="${true}" class="user-input"></igc-textarea>
+        <igc-textarea placeholder="Placeholder / No Label" ?outlined="${true}" class="user-input"></igc-textarea>
+        <igc-textarea label="Label" placeholder="Placeholder" ?outlined="${true}" class="user-input"></igc-textarea>
       </div>
       <igc-snackbar action-text="Action" @igcAction="${() => this.snackbar?.toggle()}" id="snackbar" class="notification">
         This is a message
