@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, state, query } from 'lit/decorators.js';
-import { defineComponents, IgcBannerComponent, IgcButtonComponent, IgcButtonGroupComponent, IgcCalendarComponent, IgcCardComponent, IgcChipComponent, IgcDatePickerComponent, IgcDialogComponent, IgcIconButtonComponent, IgcIconComponent, IgcInputComponent, IgcRippleComponent, IgcSelectComponent, IgcSliderComponent, IgcSnackbarComponent, IgcStepperComponent, IgcSwitchComponent, IgcToggleButtonComponent, IgcTreeComponent } from 'igniteui-webcomponents';
+import { defineComponents, IgcBannerComponent, IgcButtonComponent, IgcButtonGroupComponent, IgcCalendarComponent, IgcCardComponent, IgcChipComponent, IgcDatePickerComponent, IgcDialogComponent, IgcIconButtonComponent, IgcIconComponent, IgcInputComponent, IgcRippleComponent, IgcSelectComponent, IgcSliderComponent, IgcSnackbarComponent, IgcStepperComponent, IgcSwitchComponent, IgcTabsComponent, IgcToggleButtonComponent, IgcTreeComponent } from 'igniteui-webcomponents';
 
-defineComponents(IgcButtonComponent, IgcRippleComponent, IgcButtonGroupComponent, IgcToggleButtonComponent, IgcChipComponent, IgcIconComponent, IgcSwitchComponent, IgcIconButtonComponent, IgcTreeComponent, IgcBannerComponent, IgcDialogComponent, IgcCardComponent, IgcStepperComponent, IgcSliderComponent, IgcCalendarComponent, IgcInputComponent, IgcSelectComponent, IgcDatePickerComponent, IgcSnackbarComponent);
+defineComponents(IgcButtonComponent, IgcRippleComponent, IgcButtonGroupComponent, IgcToggleButtonComponent, IgcChipComponent, IgcIconComponent, IgcSwitchComponent, IgcIconButtonComponent, IgcTreeComponent, IgcBannerComponent, IgcDialogComponent, IgcCardComponent, IgcTabsComponent, IgcStepperComponent, IgcSliderComponent, IgcCalendarComponent, IgcInputComponent, IgcSelectComponent, IgcDatePickerComponent, IgcSnackbarComponent);
 
 @customElement('app-view1')
 export default class View1 extends LitElement {
@@ -57,6 +57,12 @@ export default class View1 extends LitElement {
       height: max-content;
       min-width: 320px;
       max-width: 320px;
+    }
+    .tabs {
+      min-width: 0;
+      min-height: 0;
+      flex-grow: 1;
+      flex-basis: 0;
     }
     .group_3 {
       justify-content: flex-start;
@@ -119,6 +125,16 @@ export default class View1 extends LitElement {
     .actions-content {
       min-width: 50px;
       min-height: 40px;
+    }
+    .tab-item-content {
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: flex-start;
+      overflow: auto;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
     }
     .stepper {
       min-width: 0;
@@ -346,6 +362,43 @@ export default class View1 extends LitElement {
             </igc-icon-button>
           </igc-card-actions>
         </igc-card>
+        <igc-tabs class="tabs">
+          <igc-tab ?selected="${true}">
+            <span class="material-icons">
+              info
+            </span>
+            <span>Label</span>
+          </igc-tab>
+          <igc-tab-panel class="row-layout tab-item-content"></igc-tab-panel>
+          <igc-tab>
+            <span class="material-icons">
+              info
+            </span>
+            <span>Label</span>
+          </igc-tab>
+          <igc-tab-panel class="row-layout tab-item-content"></igc-tab-panel>
+          <igc-tab>
+            <span class="material-icons">
+              info
+            </span>
+            <span>Label</span>
+          </igc-tab>
+          <igc-tab-panel class="row-layout tab-item-content"></igc-tab-panel>
+          <igc-tab>
+            <span class="material-icons">
+              info
+            </span>
+            <span>Label</span>
+          </igc-tab>
+          <igc-tab-panel class="row-layout tab-item-content"></igc-tab-panel>
+          <igc-tab>
+            <span class="material-icons">
+              info
+            </span>
+            <span>Label</span>
+          </igc-tab>
+          <igc-tab-panel class="row-layout tab-item-content"></igc-tab-panel>
+        </igc-tabs>
       </div>
       <div class="column-layout group_2">
         <igc-stepper title-position="bottom" id="stepper" class="stepper">
