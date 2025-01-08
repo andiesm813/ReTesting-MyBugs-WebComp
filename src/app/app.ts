@@ -36,11 +36,18 @@ export default class App extends LitElement {
     .nav-drawer::part(main) {
       width: 200px;
     }
+    .icon-button::part(base) {
+      color: var(--ig-info-500);
+      background-color: var(--ig-gray-500);
+    }
+    .icon {
+      color: var(--ig-info-500);
+    }
     .h6 {
       margin: 0;
       flex-shrink: 0;
     }
-    .icon {
+    .icon_1 {
       --size: 24px;
       font-size: 24px;
       width: 24px;
@@ -75,8 +82,8 @@ export default class App extends LitElement {
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
       <link rel='stylesheet' href='../../ig-theme.css'>
       <igc-navbar class="navbar">
-        <igc-icon-button slot="start" variant="flat" @click="${() => this.navDrawer?.toggle()}">
-          <span class="material-icons">
+        <igc-icon-button slot="start" variant="flat" @click="${() => this.navDrawer?.toggle()}" class="icon-button">
+          <span class="material-icons icon">
             menu
           </span>
           <igc-ripple></igc-ripple>
@@ -106,10 +113,10 @@ export default class App extends LitElement {
         </igc-icon-button>
       </igc-navbar>
       <div class="row-layout group_1">
-        <igc-nav-drawer ?open="${true}" id="nav-drawer" class="nav-drawer">
+        <igc-nav-drawer id="nav-drawer" class="nav-drawer">
           <igc-nav-drawer-item @click="${() => Router.go(`/view1`)}">
             <span slot="icon">
-              <span class="material-icons icon">
+              <span class="material-icons icon_1">
                 home
               </span>
               <igc-ripple></igc-ripple>
@@ -118,7 +125,7 @@ export default class App extends LitElement {
           </igc-nav-drawer-item>
           <igc-nav-drawer-item @click="${() => Router.go(`/view2`)}">
             <span slot="icon">
-              <span class="material-icons icon">
+              <span class="material-icons icon_1">
                 dns
               </span>
               <igc-ripple></igc-ripple>
@@ -127,7 +134,7 @@ export default class App extends LitElement {
           </igc-nav-drawer-item>
           <igc-nav-drawer-item @click="${() => Router.go(`/view3`)}">
             <span slot="icon">
-              <span class="material-icons icon">
+              <span class="material-icons icon_1">
                 dashboard
               </span>
               <igc-ripple></igc-ripple>
