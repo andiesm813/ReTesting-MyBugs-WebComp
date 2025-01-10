@@ -256,13 +256,22 @@ export default class View1 extends LitElement {
     .calendar {
       height: max-content;
     }
-    .avatar::part(base) {
+    .avatar_3::part(base) {
       background-color: transparent;
     }
-    .avatar_1::part(base) {
+    .avatar_4::part(base) {
       background-color: transparent;
     }
-    .avatar_2::part(base) {
+    .avatar_1_1::part(base) {
+      background-color: transparent;
+    }
+    .avatar_1_2::part(base) {
+      background-color: transparent;
+    }
+    .avatar_2_1::part(base) {
+      background-color: transparent;
+    }
+    .avatar_2_2::part(base) {
       background-color: transparent;
     }
     .badge {
@@ -421,15 +430,23 @@ export default class View1 extends LitElement {
           </igc-badge>
         </div>
         <div class="row-layout group_6">
-          <igc-avatar src="/src/assets/Avatar3.png" shape="circle" class="avatar"></igc-avatar>
+          <igc-avatar src="https://i.pcmag.com/imagery/reviews/03aizylUVApdyLAIku1AvRV-39..v1605559903.png" shape="circle" class="avatar avatar_3"></igc-avatar>
+          <igc-avatar src="https://i.pcmag.com/imagery/reviews/03aizylUVApdyLAIku1AvRV-39..v1605559903.png" shape="circle" class="avatar_1 avatar_1_1"></igc-avatar>
+          <igc-avatar src="https://i.pcmag.com/imagery/reviews/03aizylUVApdyLAIku1AvRV-39..v1605559903.png" shape="circle" class="avatar_2 avatar_2_1"></igc-avatar>
+          <igc-avatar initials="AB" shape="circle" class="avatar"></igc-avatar>
+          <igc-avatar initials="AB" shape="circle" class="avatar_1"></igc-avatar>
+          <igc-avatar initials="AB" shape="circle" class="avatar_2"></igc-avatar>
+        </div>
+        <div class="row-layout group_6">
+          <igc-avatar src="/src/assets/Avatar3.png" shape="circle" class="avatar avatar_4"></igc-avatar>
           <igc-badge class="badge">
             Badge
           </igc-badge>
-          <igc-avatar src="/src/assets/Avatar3.png" shape="circle" class="avatar_1"></igc-avatar>
+          <igc-avatar src="/src/assets/Avatar3.png" shape="circle" class="avatar_1 avatar_1_2"></igc-avatar>
           <igc-badge class="badge">
             Badge
           </igc-badge>
-          <igc-avatar src="/src/assets/Avatar3.png" shape="circle" class="avatar_2"></igc-avatar>
+          <igc-avatar src="/src/assets/Avatar3.png" shape="circle" class="avatar_2 avatar_2_2"></igc-avatar>
           <igc-badge class="badge">
             Badge
           </igc-badge>
