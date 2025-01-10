@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, state, query } from 'lit/decorators.js';
-import { defineComponents, IgcAvatarComponent, IgcBadgeComponent, IgcBannerComponent, IgcButtonComponent, IgcButtonGroupComponent, IgcCalendarComponent, IgcCardComponent, IgcChipComponent, IgcDatePickerComponent, IgcDialogComponent, IgcIconButtonComponent, IgcIconComponent, IgcInputComponent, IgcRadioComponent, IgcRadioGroupComponent, IgcRatingComponent, IgcRippleComponent, IgcSelectComponent, IgcSliderComponent, IgcSnackbarComponent, IgcStepperComponent, IgcSwitchComponent, IgcTabsComponent, IgcTextareaComponent, IgcToggleButtonComponent, IgcTreeComponent } from 'igniteui-webcomponents';
+import { defineComponents, IgcAvatarComponent, IgcBadgeComponent, IgcBannerComponent, IgcButtonComponent, IgcButtonGroupComponent, IgcCalendarComponent, IgcCardComponent, IgcChipComponent, IgcDatePickerComponent, IgcDialogComponent, IgcIconButtonComponent, IgcIconComponent, IgcInputComponent, IgcListComponent, IgcListItemComponent, IgcRadioComponent, IgcRadioGroupComponent, IgcRatingComponent, IgcRippleComponent, IgcSelectComponent, IgcSliderComponent, IgcSnackbarComponent, IgcStepperComponent, IgcSwitchComponent, IgcTabsComponent, IgcTextareaComponent, IgcToggleButtonComponent, IgcTreeComponent } from 'igniteui-webcomponents';
 
-defineComponents(IgcButtonComponent, IgcRippleComponent, IgcButtonGroupComponent, IgcToggleButtonComponent, IgcChipComponent, IgcIconComponent, IgcSwitchComponent, IgcRadioGroupComponent, IgcRadioComponent, IgcIconButtonComponent, IgcRatingComponent, IgcBadgeComponent, IgcAvatarComponent, IgcTreeComponent, IgcBannerComponent, IgcDialogComponent, IgcCardComponent, IgcTabsComponent, IgcStepperComponent, IgcInputComponent, IgcSelectComponent, IgcDatePickerComponent, IgcTextareaComponent, IgcSliderComponent, IgcCalendarComponent, IgcSnackbarComponent);
+defineComponents(IgcButtonComponent, IgcRippleComponent, IgcButtonGroupComponent, IgcToggleButtonComponent, IgcChipComponent, IgcIconComponent, IgcSwitchComponent, IgcRadioGroupComponent, IgcRadioComponent, IgcIconButtonComponent, IgcRatingComponent, IgcBadgeComponent, IgcAvatarComponent, IgcTreeComponent, IgcBannerComponent, IgcDialogComponent, IgcCardComponent, IgcTabsComponent, IgcListComponent, IgcListItemComponent, IgcStepperComponent, IgcInputComponent, IgcSelectComponent, IgcDatePickerComponent, IgcTextareaComponent, IgcSliderComponent, IgcCalendarComponent, IgcSnackbarComponent);
 
 @customElement('app-view1')
 export default class View1 extends LitElement {
@@ -262,16 +262,25 @@ export default class View1 extends LitElement {
     .avatar_4::part(base) {
       background-color: transparent;
     }
+    .avatar_5::part(base) {
+      background-color: transparent;
+    }
     .avatar_1_1::part(base) {
       background-color: transparent;
     }
     .avatar_1_2::part(base) {
       background-color: transparent;
     }
+    .avatar_1_3::part(base) {
+      background-color: transparent;
+    }
     .avatar_2_1::part(base) {
       background-color: transparent;
     }
     .avatar_2_2::part(base) {
+      background-color: transparent;
+    }
+    .avatar_2_3::part(base) {
       background-color: transparent;
     }
     .badge {
@@ -286,6 +295,10 @@ export default class View1 extends LitElement {
     .tree {
       min-width: max-content;
       min-height: max-content;
+      flex-shrink: 0;
+    }
+    .list {
+      height: max-content;
       flex-shrink: 0;
     }
   `;
@@ -546,7 +559,34 @@ export default class View1 extends LitElement {
             </span>
             <span>Label</span>
           </igc-tab>
-          <igc-tab-panel class="row-layout tab-item-content"></igc-tab-panel>
+          <igc-tab-panel class="row-layout tab-item-content">
+            <igc-list class="list">
+              <igc-list-item>
+                <igc-avatar src="https://i.pcmag.com/imagery/reviews/03aizylUVApdyLAIku1AvRV-39..v1605559903.png" slot="start" shape="circle" class="avatar avatar_5"></igc-avatar>
+                <div slot="title">Title goes here</div>
+                <div slot="subtitle">Subtitle...</div>
+                <span slot="end" class="material-icons icon_2">
+                  star
+                </span>
+              </igc-list-item>
+              <igc-list-item>
+                <igc-avatar src="https://i.pcmag.com/imagery/reviews/03aizylUVApdyLAIku1AvRV-39..v1605559903.png" slot="start" shape="circle" class="avatar_1 avatar_1_3"></igc-avatar>
+                <div slot="title">Title goes here</div>
+                <div slot="subtitle">Subtitle...</div>
+                <span slot="end" class="material-icons icon_2">
+                  star
+                </span>
+              </igc-list-item>
+              <igc-list-item>
+                <igc-avatar src="https://i.pcmag.com/imagery/reviews/03aizylUVApdyLAIku1AvRV-39..v1605559903.png" slot="start" shape="circle" class="avatar_2 avatar_2_3"></igc-avatar>
+                <div slot="title">Title goes here</div>
+                <div slot="subtitle">Subtitle...</div>
+                <span slot="end" class="material-icons icon_2">
+                  star
+                </span>
+              </igc-list-item>
+            </igc-list>
+          </igc-tab-panel>
           <igc-tab>
             <span class="material-icons">
               info
