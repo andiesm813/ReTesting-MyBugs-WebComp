@@ -79,6 +79,7 @@ export default class App extends LitElement {
 
   render() {
     return html`
+      <link href='node_modules/@igniteui/material-icons-extended/styles/sprite.css' rel='stylesheet'>
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
       <link rel='stylesheet' href='../../ig-theme.css'>
       <igc-navbar class="navbar">
@@ -113,15 +114,13 @@ export default class App extends LitElement {
         </igc-icon-button>
       </igc-navbar>
       <div class="row-layout group_1">
-        <igc-nav-drawer id="nav-drawer" class="nav-drawer">
+        <igc-nav-drawer position="relative" id="nav-drawer" class="nav-drawer">
           <igc-nav-drawer-item @click="${() => Router.go(`/view1`)}">
             <span slot="icon">
-              <span class="material-icons icon_1">
-                home
-              </span>
+              <span class="imx-icon imx-usa-party-democratic icon_1"></span>
               <igc-ripple></igc-ripple>
             </span>
-            <div slot="content">All Components</div>
+            <div slot="content">Material Ext Icon</div>
           </igc-nav-drawer-item>
           <igc-nav-drawer-item @click="${() => Router.go(`/view2`)}">
             <span slot="icon">
@@ -130,7 +129,7 @@ export default class App extends LitElement {
               </span>
               <igc-ripple></igc-ripple>
             </span>
-            <div slot="content">View 2</div>
+            <div slot="content">Lala</div>
           </igc-nav-drawer-item>
           <igc-nav-drawer-item @click="${() => Router.go(`/view3`)}">
             <span slot="icon">
@@ -143,6 +142,69 @@ export default class App extends LitElement {
           </igc-nav-drawer-item>
         </igc-nav-drawer>
         <router-outlet class="view-container"></router-outlet>
+        <igc-nav-drawer position="relative" class="nav-drawer">
+          <div slot="mini">
+            <igc-nav-drawer-item @click="${() => Router.go(`/view3`)}">
+              <span slot="icon">
+                <span class="material-icons icon_1">
+                  dashboard
+                </span>
+                <igc-ripple></igc-ripple>
+              </span>
+            </igc-nav-drawer-item>
+            <igc-nav-drawer-header-item @click="${() => Router.go(`/view1`)}">
+              <span slot="icon">
+                <span class="material-icons icon_1">
+                  home
+                </span>
+                <igc-ripple></igc-ripple>
+              </span>
+            </igc-nav-drawer-header-item>
+            <igc-nav-drawer-item @click="${() => Router.go(`/view1`)}">
+              <span slot="icon">
+                <span class="material-icons icon_1">
+                  home
+                </span>
+                <igc-ripple></igc-ripple>
+              </span>
+            </igc-nav-drawer-item>
+            <igc-nav-drawer-item @click="${() => Router.go(`/view2`)}">
+              <span slot="icon">
+                <span class="material-icons icon_1">
+                  dns
+                </span>
+                <igc-ripple></igc-ripple>
+              </span>
+            </igc-nav-drawer-item>
+          </div>
+          <igc-nav-drawer-item @click="${() => Router.go(`/view1`)}">
+            <span slot="icon">
+              <span class="material-icons icon_1">
+                home
+              </span>
+              <igc-ripple></igc-ripple>
+            </span>
+            <div slot="content">Nav Item 1</div>
+          </igc-nav-drawer-item>
+          <igc-nav-drawer-item @click="${() => Router.go(`/view2`)}">
+            <span slot="icon">
+              <span class="material-icons icon_1">
+                dns
+              </span>
+              <igc-ripple></igc-ripple>
+            </span>
+            <div slot="content">Nav Item 2</div>
+          </igc-nav-drawer-item>
+          <igc-nav-drawer-item @click="${() => Router.go(`/view3`)}">
+            <span slot="icon">
+              <span class="material-icons icon_1">
+                dashboard
+              </span>
+              <igc-ripple></igc-ripple>
+            </span>
+            <div slot="content">Nav Item 3</div>
+          </igc-nav-drawer-item>
+        </igc-nav-drawer>
       </div>
     `;
   }
